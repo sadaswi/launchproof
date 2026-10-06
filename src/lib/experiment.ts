@@ -75,7 +75,15 @@ export const experimentSchema = z
     minSample: z.number().int().min(1).max(100_000_000),
     status: z.enum(['draft', 'active']),
     counts: countsSchema,
-    isDemo: z.boolean().default(false),
+    // DeepSpace stores boolean-interpreted columns as SQLite 0/1 values. The
+    // current SDK preserves that numeric representation when reading records,
+    // so normalize it at the app boundary before validation.
+    isDemo: z
+      .preprocess(
+        (value) => (value === 1 ? true : value === 0 ? false : value),
+        z.boolean(),
+      )
+      .default(false),
   })
   .strict()
   .superRefine((value, ctx) => {
