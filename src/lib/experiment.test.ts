@@ -67,6 +67,14 @@ describe('cohort math and evidence boundaries', () => {
     expect(revisionOf({ ...experiment, targetRate: 40 }, [])).not.toBe(a)
     expect(revisionOf(experiment, [])).toBe(a)
   })
+  it('normalizes DeepSpace SQLite booleans when reading a record', () => {
+    expect(
+      experimentSchema.parse({ ...demoExperiment(), isDemo: 1 }).isDemo,
+    ).toBe(true)
+    expect(
+      experimentSchema.parse({ ...demoExperiment(), isDemo: 0 }).isDemo,
+    ).toBe(false)
+  })
   it('rejects unsafe source links and mislabeled AI observations', () => {
     expect(publicUrl('https://docs.deep.space/guides/authentication')).toBe(
       true,
