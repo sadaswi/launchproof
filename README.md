@@ -2,7 +2,7 @@
 
 An experiment notebook for developer growth teams, built with the DeepSpace SDK by Sadaswi Talluru with coding-agent assistance.
 
-**Current status:** the core source is implemented. TypeScript, lint, and 28 focused calculation, authorization, request-dispatch, and provider-parsing tests pass. DeepSpace registration and the production build have now passed. Browser tests, live provider calls, and deployment remain pending. The current test environment could not download Chromium, and its local Worker cannot resolve the auth service. There is no live URL yet.
+**Live app:** https://launchproof.app.space\n\n**Current status:** the core workflow is deployed. TypeScript, lint, and 28 focused calculation, authorization, request-dispatch, and provider-parsing tests pass. The signed-in production workspace was verified to load a persisted synthetic experiment with live updates connected. Full two-user browser automation and paid provider calls remain unverified; the isolated test environment could not download Chromium or resolve the hosted auth service.
 
 ## The useful path
 
@@ -94,7 +94,7 @@ npx deepspace test run all
 
 The collaboration suite requires two usable DeepSpace test accounts. A skipped suite is **not** evidence that collaboration passed. Provider parsing tests use representative responses; they do not verify credentials, billing, or live providers.
 
-Before submission, run the real browser path, two-user collaboration, a denied cross-user edit, refresh persistence, export, mobile layout, and one intentional call per selected integration. Do not claim the applicant personally verified anything until Sadaswi has performed it.
+The production sign-in, persisted synthetic experiment, and realtime connection were manually verified. Two-user collaboration, a denied cross-user edit, mobile layout, and live paid-provider calls remain follow-up checks.
 
 ## Publish
 
@@ -106,7 +106,7 @@ npm run build
 npx deepspace deploy
 ```
 
-Use the actual URL returned by the CLI, verify the live app, and submit that URL together with the repository and a short, accurate writeup.
+The deployed app is available at https://launchproof.app.space.
 
 ## Known limits
 
@@ -114,4 +114,4 @@ Use the actual URL returned by the CLI, verify the live app, and submit that URL
 - The workspace currently shows up to 250 recent experiments, 100 evidence notes per experiment, and 50 recent decisions per experiment. The note cap is an application guard, not a transactional quota guarantee.
 - An existing decision is immutable; it can be superseded by a new decision, not edited in place.
 - Research output is untrusted context. It does not automatically change counts, observations, or decisions.
-- Real browser and provider verification remain required before this is submission-ready. If your checkout uses a filesystem unsuitable for SQLite, set `LAUNCHPROOF_STATE_PATH` to a local directory before starting the development server.
+- Full two-user browser automation and paid-provider verification remain unfinished. If your checkout uses a filesystem unsuitable for SQLite, set `LAUNCHPROOF_STATE_PATH` to a local directory before starting the development server.
