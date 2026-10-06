@@ -2,7 +2,7 @@
 
 An experiment notebook for developer growth teams, built with the DeepSpace SDK by Sadaswi Talluru with coding-agent assistance.
 
-**Live app:** https://launchproof.app.space\n\n**Current status:** the core workflow is deployed. TypeScript, lint, and 28 focused calculation, authorization, request-dispatch, and provider-parsing tests pass. The signed-in production workspace was verified to load a persisted synthetic experiment with live updates connected. Full two-user browser automation and paid provider calls remain unverified; the isolated test environment could not download Chromium or resolve the hosted auth service.
+**Live app:** https://launchproof.app.space\n\n**Current status:** the core workflow is deployed. TypeScript, lint, and 29 focused calculation, authorization, request-dispatch, and provider-parsing tests pass. The signed-in production workspace was verified to load a persisted synthetic experiment with live updates connected. Full two-user browser automation and paid provider calls remain unverified; the isolated test environment could not download Chromium or resolve the hosted auth service.
 
 ## The useful path
 
